@@ -55,7 +55,7 @@ function Home({ language = "en" }) {
 
           <div className="hero-image-box">
             <img
-              src={isHindi ? "/images/services/agriculture-drone.png" : "/images/services/agriculture-drone-hi.png"} 
+              src={isHindi ? "/images/services/agriculture-drone-hi.png" : "/images/services/agriculture-drone.png"} 
               alt="Agricultural drone spraying"
             />
           </div>
