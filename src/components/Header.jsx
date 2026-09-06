@@ -6,7 +6,7 @@ function Header() {
       <div className="container header-inner">
         <Link to="/" className="brand">
           <img src="/logo.png" alt="GarudSpray logo" />
-          <span>GarudSpray</span>
+          <span></span>
         </Link>
 
         <nav className="main-nav">
