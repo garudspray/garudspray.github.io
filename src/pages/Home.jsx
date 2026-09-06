@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-
 import { services } from "../data/services";
 import { drones } from "../data/drones";
-
 import ServiceCard from "../components/ServiceCard";
 import DroneCard from "../components/DroneCard";
 
@@ -20,6 +18,7 @@ function Home({ language = "en" }) {
           "पश्चिमी राजस्थान में अधिकृत कृषि ड्रोन डीलर के रूप में हम विभिन्न ब्रांडों के ड्रोन उपलब्ध कराते हैं।",
         viewMarketplace: "सभी ड्रोन देखें",
         contact: "संपर्क करें",
+
       }
     : {
         title: "Agricultural Drone Services in Western Rajasthan",
@@ -31,6 +30,8 @@ function Home({ language = "en" }) {
           "As an authorised agricultural drone dealer in Western Rajasthan, we provide drones from multiple brands.",
         viewMarketplace: "View All Drones",
         contact: "Contact Us",
+
+       
       };
 
   return (
