@@ -55,7 +55,7 @@ function Home({ language = "en" }) {
 
           <div className="hero-image-box">
             <img
-              src="/images/services/agriculture-drone.jpg"
+              src="/images/services/agriculture-drone.png"
               alt="Agricultural drone spraying"
             />
           </div>
