@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+  import { Link } from "react-router-dom";
 import { services } from "../data/services";
 import { drones } from "../data/drones";
 import ServiceCard from "../components/ServiceCard";
 import DroneCard from "../components/DroneCard";
+import SEO from "../components/SEO";
+
 
 function Home({ language = "en" }) {
   const isHindi = language === "hi";
@@ -18,7 +20,10 @@ function Home({ language = "en" }) {
           "पश्चिमी राजस्थान में अधिकृत कृषि ड्रोन डीलर के रूप में हम विभिन्न ब्रांडों के ड्रोन उपलब्ध कराते हैं।",
         viewMarketplace: "सभी ड्रोन देखें",
         contact: "संपर्क करें",
-
+        // SEO 
+        seoTitle: "पश्चिमी राजस्थान में कृषि ड्रोन सेवाएं", 
+        seoDescription: "पश्चिमी राजस्थान में कृषि ड्रोन से फसल छिड़काव, कीटनाशक छिड़काव और अन्य कृषि ड्रोन सेवाएं। GarudSpray से कृषि ड्रोन खरीदें।", 
+        canonical: "https://www.garudspray.com/hi/",
       }
     : {
         title: "Agricultural Drone Services in Western Rajasthan",
@@ -30,12 +35,17 @@ function Home({ language = "en" }) {
           "As an authorised agricultural drone dealer in Western Rajasthan, we provide drones from multiple brands.",
         viewMarketplace: "View All Drones",
         contact: "Contact Us",
-
+        // SEO 
+        seoTitle: "Agricultural Drone Services in Western Rajasthan", 
+        seoDescription: "GarudSpray provides agricultural drone spraying, pesticide application and other drone services in Western Rajasthan. Explore agricultural drones for sale.", 
+        canonical: "https://www.garudspray.com/",
        
       };
 
   return (
     <>
+    {/* SEO */} 
+    <SEO title={page.seoTitle} description={page.seoDescription} canonical={page.canonical} language={language} />
       <section className="hero-section">
         <div className="container hero-content">
           <div>

@@ -1,14 +1,22 @@
 import { Helmet } from "react-helmet-async";
 
-export default function SEO({
+function SEO({
   title,
   description,
-  keywords,
   canonical,
+  language = "en",
 }) {
+  const siteName = "GarudSpray";
+
+  const fullTitle = title
+    ? `${title} | ${siteName}`
+    : `${siteName} | Agricultural Drone Services`;
+
   return (
     <Helmet>
-      <title>{title}</title>
+      <html lang={language === "hi" ? "hi" : "en"} />
+
+      <title>{fullTitle}</title>
 
       <meta
         name="description"
@@ -16,24 +24,38 @@ export default function SEO({
       />
 
       <meta
-        name="keywords"
-        content={keywords}
+        name="robots"
+        content="index, follow"
       />
 
-      <link
-        rel="canonical"
-        href={canonical}
-      />
+      {canonical && (
+        <link
+          rel="canonical"
+          href={canonical}
+        />
+      )}
 
-      {/* Open Graph - when sharing on WhatsApp, Facebook, etc. */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={canonical} />
+      {/* Open Graph / Social Sharing */}
+      <meta property="og:title" content={fullTitle} />
+
       <meta
-        property="og:image"
-        content="https://garudspray.com/og-image.png"
+        property="og:description"
+        content={description}
       />
+
+      <meta
+        property="og:type"
+        content="website"
+      />
+
+      {canonical && (
+        <meta
+          property="og:url"
+          content={canonical}
+        />
+      )}
     </Helmet>
   );
 }
+
+export default SEO;
